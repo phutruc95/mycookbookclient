@@ -31,7 +31,7 @@ namespace Cookbook.Controllers
                     id = int.Parse(ViewData["MaMonAn"].ToString());
                 }
                 WebClient client = new WebClient();
-                var json = client.DownloadString("http://localhost://1114/api/MonAn/LayMonAn/" + id.ToString());
+                var json = client.DownloadString("http://mycookbookserver.apphb.com/api/MonAn/LayMonAn/" + id.ToString());
                 json = System.Text.Encoding.Unicode.GetString(System.Text.Encoding.Convert(System.Text.Encoding.UTF8, System.Text.Encoding.Unicode, System.Text.Encoding.Default.GetBytes(json)));
                 var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
                 dynamic model = serializer.Deserialize<dynamic>(json);
@@ -58,7 +58,7 @@ namespace Cookbook.Controllers
         {
 
             //Upload hinh
-            Account account = new Account("dxms0pcz5", "156964437625386", "O9_hGTl3W2xtmYBo7gxxxfeoCWA");
+             Account account = new Account("hcgrv59n0", "684273454917791", "-lT7YqMv67cKfAR1BraSALdNtNo");
             Cloudinary cloudinary = new Cloudinary(account);
 
             var uploadParams = new ImageUploadParams()
@@ -78,7 +78,7 @@ namespace Cookbook.Controllers
         {
 
             //Upload hinh
-            Account account = new Account("dxms0pcz5", "156964437625386", "O9_hGTl3W2xtmYBo7gxxxfeoCWA");
+            Account account = new Account("hcgrv59n0", "684273454917791", "-lT7YqMv67cKfAR1BraSALdNtNo");
             Cloudinary cloudinary = new Cloudinary(account);
 
             var uploadParams = new ImageUploadParams()
@@ -92,7 +92,7 @@ namespace Cookbook.Controllers
 
           //  ViewData["MaMonAn"] = id;
             WebClient client = new WebClient();
-            var json = client.DownloadString("http://localhost:1114/api/MonAn/LayMonAn/" + id.ToString());
+            var json = client.DownloadString("http://mycookbookserver.apphb.com/api/MonAn/LayMonAn/" + id.ToString());
             json = System.Text.Encoding.Unicode.GetString(System.Text.Encoding.Convert(System.Text.Encoding.UTF8, System.Text.Encoding.Unicode, System.Text.Encoding.Default.GetBytes(json)));
             var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
             dynamic model = serializer.Deserialize<dynamic>(json);
